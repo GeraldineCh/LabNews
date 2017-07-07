@@ -20,6 +20,20 @@ const Header = (update) => {
  const logLab = $('<div class="container-fluid center-block"></div>');
  const laboratoria = $('<img src="assets/img/logoicon.png" href="#" class="img-header" alt="">');
  const bajada = $('<br><span>Lunes, Junio 12 de 2017</span><span class="separador-header">|</span><img src="assets/img/cloud.png" href="#" class="img-header" alt=""><span>22°</span>');
+ 
+ const navYellow = $('<nav class="navbar navbar-default nb-yellow"></nav>');
+ const contenedor = $('<div class="container-fluid"></div>');
+ const contenido = $('<div class="collapse navbar-collapse" id="nv1"></div>');
+ const lista = $('<ul class="nav navbar-nav"></ul>');
+ const elemento1 = $('<li><a href="#">Lo último</a></li>');
+ const elemento2 = $('<li><a href="#">Opinión</a></li>');
+ const elemento3 = $('<li><a href="#">Cultura</a></li>');
+ const elemento4 = $('<li><a href="#">Perú</a></li>');
+ const elemento5 = $('<li><a href="#">Tecnología</a></li>');
+ const elemento6 = $('<li><a href="#">Mundo</a></li>');
+ const elemento7 = $('<li><a href="#">Economía</a></li>');
+ const elemento8 = $('<li><a href="#">Lifestyle</a></li>');
+ const elemento9 = $('<li><a href="#">Deporte</a></li>');
     
  title4.append(menu);
  title4.append(message);
@@ -39,7 +53,22 @@ const Header = (update) => {
  
  logLab.append(laboratoria);
  logLab.append(bajada);
+ 
+ navYellow.append(contenedor);
+ contenedor.append(contenido);
+ contenido.append(lista);
+ lista.append(elemento1);
+ lista.append(elemento2);
+ lista.append(elemento3);
+ lista.append(elemento4);
+ lista.append(elemento5);
+ lista.append(elemento6);
+ lista.append(elemento7);
+ lista.append(elemento8);
+ lista.append(elemento9);
+ 
  title.append(logLab);
+ title.append(navYellow);
  
  header.append(title);
     
