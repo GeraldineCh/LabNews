@@ -13,8 +13,8 @@ const update = function (){
 };
 
 $( function() {
-	$.getJSON("./api/backup.json", function (result) {
+	/*$.getJSON("./api/backup.json", function (result) {
+	});*/
 		const root = $('.root');
 		render(root);
-	});
 });

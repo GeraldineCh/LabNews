@@ -1,19 +1,15 @@
-//Declarado de variables
+//Leerá gulp para reconocer las tareas y ponerlas en el pipe
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserify = require('gulp-browserify');
 var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
 
-
-//Carpetas origen y destino
 var config = {
 	source:'./src/',
 	dist: './public/'
 };
 
-
-//Caminos-rutas
 var paths = {
 	assets: "assets/",
 	html: "**/*.html",
@@ -29,7 +25,6 @@ var paths = {
 	bootstrapJS: "js/vendor/bootstrap/*"
 };
 
-//Recuersos para las tareas
 var sources = {
 	assets: config.source + paths.assets,
 	html: config.source + paths.html,
@@ -45,28 +40,32 @@ var sources = {
 	bootstrap: config.source + paths.assets + paths.bootstrapJS
 };
 
-//TAREAS
 
-//Clonadores
 gulp.task('vendor',function () {
 	gulp.src(sources.vendor).pipe(gulp.dest(config.dist + paths.assets + "js/vendor"))
+
 });
+
 
 gulp.task('bootstrapJS',function () {
 	gulp.src(sources.bootstrap).pipe(gulp.dest(config.dist + paths.assets + "js/vendor/bootstrap"))
+
 });
 
 gulp.task('img',function () {
 	gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"))
+
 });
 
 gulp.task('fonts',function () {
 	gulp.src(sources.fonts).pipe(gulp.dest(config.dist + paths.assets + "fonts"))
-});
 
+});
 gulp.task('bootstrapFT',function () {
 	gulp.src(sources.bootstrapFT).pipe(gulp.dest(config.dist + paths.assets + "fonts/bootstrap"))
+
 });
+
 
 gulp.task('html', function () {
 	gulp.src(sources.html).pipe(gulp.dest(config.dist))
@@ -83,16 +82,17 @@ gulp.task("sass", function () {
 gulp.task("js", function () {
 	gulp.src(sources.rootJS)
 		//.pipe(concat(sources.rootJS)
-		.pipe(browserify())
+		//.pipe(browserify())
 		.pipe(rename("bundle.js"))
 		.pipe(gulp.dest(config.dist + paths.assets + "js"));
 });
 
 gulp.task('components',function () {
 	gulp.src(sources.components).pipe(gulp.dest(config.dist + paths.assets + "js/components"))
+
 });
 
-//Observadores
+
 gulp.task("sass-watch", ["sass"], function (done) {
 	browserSync.reload();
 	done();
@@ -108,7 +108,6 @@ gulp.task("html-watch", ["html"], function (done) {
 	done();
 });
 
-//Ejecutadores
 gulp.task("serve", function () {
 	browserSync.init({
 		server: {
@@ -122,5 +121,6 @@ gulp.task("serve", function () {
 });
 
 
-//'Ejecutador unitario general
+//'html-watch', 'js-watch', 'sass-watch'
+
 gulp.task('run', [ 'fonts','html-watch', 'js-watch', 'sass-watch','bootstrapFT','vendor', 'img', 'components','bootstrapJS','serve']);
