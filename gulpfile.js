@@ -15,14 +15,16 @@ var paths = {
 	html: "**/*.html",
 	sass: "scss/**/*.scss",
 	mainSass: "scss/main.scss",
-	js: "js/**/*.js",
 	fonts:"fonts",
 	bootstrapFT:"fonts/bootstrap/*",
-	vendor:"js/vendor/*",
-	components:"js/components/*",
+	js: "js/**/*.js",
 	mainJS: "js/app.js",
-	img: "img/*.*",
-	bootstrapJS: "js/vendor/bootstrap/*"
+	vendor:"js/vendor/*",
+	bootstrapJS: "js/vendor/bootstrap/*",
+	components:"js/components/*",
+	img: "img/**/*.png",
+    autor: "authors/*",
+    noticias: "news/*"
 };
 
 var sources = {
@@ -37,7 +39,9 @@ var sources = {
 	img: config.source + paths.assets + paths.img,
 	vendor: config.source + paths.assets + paths.vendor,
 	components: config.source + paths.assets + paths.components,
-	bootstrap: config.source + paths.assets + paths.bootstrapJS
+	bootstrap: config.source + paths.assets + paths.bootstrapJS,
+    author: config.source + paths.assets + paths.img + paths.autor,
+    news: config.source + paths.assets + paths.img + paths.noticias
 };
 
 
@@ -54,6 +58,16 @@ gulp.task('bootstrapJS',function () {
 
 gulp.task('img',function () {
 	gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"))
+
+});
+
+gulp.task('autor',function () {
+	gulp.src(sources.author).pipe(gulp.dest(config.dist + paths.assets + paths.img + "authors"))
+
+});
+
+gulp.task('noticias',function () {
+	gulp.src(sources.news).pipe(gulp.dest(config.dist + paths.assets + paths.img + "news"))
 
 });
 
@@ -82,7 +96,7 @@ gulp.task("sass", function () {
 gulp.task("js", function () {
 	gulp.src(sources.rootJS)
 		//.pipe(concat(sources.rootJS)
-		//.pipe(browserify())
+		.pipe(browserify())
 		.pipe(rename("bundle.js"))
 		.pipe(gulp.dest(config.dist + paths.assets + "js"));
 });
@@ -123,4 +137,4 @@ gulp.task("serve", function () {
 
 //'html-watch', 'js-watch', 'sass-watch'
 
-gulp.task('run', [ 'fonts','html-watch', 'js-watch', 'sass-watch','bootstrapFT','vendor', 'img', 'components','bootstrapJS','serve']);
+gulp.task('run', [ 'fonts','html-watch', 'js-watch', 'sass-watch','bootstrapFT','vendor', 'img', 'autor', 'noticias', 'components','bootstrapJS','serve']);

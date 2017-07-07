@@ -34,6 +34,13 @@ const Header = (update) => {
  const elemento7 = $('<li><a href="#">Economía</a></li>');
  const elemento8 = $('<li><a href="#">Lifestyle</a></li>');
  const elemento9 = $('<li><a href="#">Deporte</a></li>');
+ 
+ const imagen = $('<div class="inicio-imagen"></div>');
+ const texto = $('<div class="inicio-texto"></div>');
+ const titular1 = $('<h3>MIT BUSCA ESTUDIANTES DE TODO EL MUNDO QUE QUIERAN ESTUDIAR GRATIS</h3>');
+ const parrafo1 = $('<p>Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>');
+ 
+ 
     
  title4.append(menu);
  title4.append(message);
@@ -67,8 +74,13 @@ const Header = (update) => {
  lista.append(elemento8);
  lista.append(elemento9);
  
+ imagen.append(texto);
+ texto.append(titular1);
+ texto.append(parrafo1);
+ 
  title.append(logLab);
  title.append(navYellow);
+ title.append(imagen);
  
  header.append(title);
     
