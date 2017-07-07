@@ -4,6 +4,15 @@
  font-family: 'Montserrat', sans-serif;
 }
 
+.lab-yellow {
+ color: #F7B617;
+}
+
+/*SECCIÓN INICIO*/
+header {
+ clear: both;
+}
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -11,7 +20,9 @@
 }
 
 .img-header {
+ align-content: center;
  margin: 1rem;
+ height: 3rem;
 }
 
 .separador-header {
@@ -27,9 +38,23 @@
     color: white !important;
 }
 
+.yellow-line {
+ border-top: 2px #F7B617 solid !important;
+ 
+}
+
 .inicio-imagen {
  background-image: url(../img/news/news-0.png);
- height: 500px;
- padding: 2rem;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 92vh;
+ padding: 20rem 2rem 2rem 2rem;
  color: white;
+}
+
+/*SECCIÓN NOTICIAS SECUNDARIAS*/
+
+.gray-bg {
+ background-color: #2B2B2B;
 }

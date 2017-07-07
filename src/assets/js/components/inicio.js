@@ -3,25 +3,26 @@
 const Header = (update) => {
  const header = $('<header></header>');
  
+ const cabecera = $('<div class="inicio-imagen"></div>');
  const title = $('<form class="form-inline center navbar-fixed-top"></form>');
- const title2 = $('<div class="container-fluid"></div>');
+ const title2 = $('<div class="container-fluid hidden-xs"></div>');
  const title3 = $('<div class="form-inline"></div>');
  const title4 = $('<div class="form-group navbar-left"></div>');
  const title5 = $('<div class="form-group"></div>');
  const search = $('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>');
  const user = $('<span>SEARCH</span>');
- const menu = $('<img src="assets/img/menu.png" href="#" class="img-header" alt="">');
+ const menu = $('<img src="assets/img/menu.png" href="#" alt="">');
  const message = $('<span>SECTIONS</span>');
  const facebook = $('<img src="assets/img/fb.png" href="#" class="img-header" alt="">');
  const twitter = $('<img src="assets/img/fb.png" href="#" class="img-header" alt="">');
  const linkedin = $('<img src="assets/img/in.png" href="#" class="img-header" alt="">');
  const line = $('<br><hr>');
  
- const logLab = $('<div class="container-fluid center-block"></div>');
- const laboratoria = $('<img src="assets/img/logoicon.png" href="#" class="img-header" alt="">');
- const bajada = $('<br><span>Lunes, Junio 12 de 2017</span><span class="separador-header">|</span><img src="assets/img/cloud.png" href="#" class="img-header" alt=""><span>22°</span>');
+ const logLab = $('<div class="container-fluid hidden-xs"></div>');
+ const laboratoria = $('<img src="assets/img/logoicon.png" href="#" alt="">');
+ const bajada = $('<br><span class="hidden-xs">Lunes, Junio 12 de 2017</span><span class="separador-header hidden-xs">|</span><img src="assets/img/cloud.png" class="hidden-xs" href="#" class="img-header" alt=""><span class="hidden-xs">22°</span>');
  
- const navYellow = $('<nav class="navbar navbar-default nb-yellow"></nav>');
+ const navYellow = $('<nav class="navbar navbar-default hidden-xs"></nav>');
  const contenedor = $('<div class="container-fluid"></div>');
  const contenido = $('<div class="collapse navbar-collapse" id="nv1"></div>');
  const lista = $('<ul class="nav navbar-nav"></ul>');
@@ -33,14 +34,21 @@ const Header = (update) => {
  const elemento6 = $('<li><a href="#">Mundo</a></li>');
  const elemento7 = $('<li><a href="#">Economía</a></li>');
  const elemento8 = $('<li><a href="#">Lifestyle</a></li>');
- const elemento9 = $('<li><a href="#">Deporte</a></li>');
+ const elemento9 = $('<li><a href="#">Deporte</a></li>'); 
  
- const imagen = $('<div class="inicio-imagen"></div>');
+ const secundario = $('<div class="container-fluid visible-xs" id="secundario"></div>');
+ const laboratoria2 = $('<img src="assets/img/logoicon.png" href="#" class="img-header" alt="">');
+ const menu2 = $('<img src="assets/img/menu.png" href="#" class="img-header" alt="">');
+ const line2 = $('<br><hr class="yellow-line">');
+ 
+ const imagen = $('<div class="container-fluid inicio-imagen"></div>');
  const texto = $('<div class="inicio-texto"></div>');
  const titular1 = $('<h3>MIT BUSCA ESTUDIANTES DE TODO EL MUNDO QUE QUIERAN ESTUDIAR GRATIS</h3>');
- const parrafo1 = $('<p>Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>');
+ const parrafo1 = $('<p class="hidden-xs">Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>');
  
- 
+ secundario.append(laboratoria2);
+ secundario.append(menu2);
+ secundario.append(line2);
     
  title4.append(menu);
  title4.append(message);
@@ -78,6 +86,7 @@ const Header = (update) => {
  texto.append(titular1);
  texto.append(parrafo1);
  
+ title.append(secundario);
  title.append(logLab);
  title.append(navYellow);
  title.append(imagen);
