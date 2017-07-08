@@ -1,4 +1,3 @@
-//Leerá gulp para reconocer las tareas y ponerlas en el pipe
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserify = require('gulp-browserify');
@@ -47,37 +46,30 @@ var sources = {
 
 gulp.task('vendor',function () {
 	gulp.src(sources.vendor).pipe(gulp.dest(config.dist + paths.assets + "js/vendor"))
-
 });
-
 
 gulp.task('bootstrapJS',function () {
 	gulp.src(sources.bootstrap).pipe(gulp.dest(config.dist + paths.assets + "js/vendor/bootstrap"))
-
 });
 
 gulp.task('img',function () {
 	gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"))
-
 });
 
 gulp.task('autor',function () {
 	gulp.src(sources.author).pipe(gulp.dest(config.dist + paths.assets + paths.img + "authors"))
-
 });
 
 gulp.task('noticias',function () {
 	gulp.src(sources.news).pipe(gulp.dest(config.dist + paths.assets + paths.img + "news"))
-
 });
 
 gulp.task('fonts',function () {
 	gulp.src(sources.fonts).pipe(gulp.dest(config.dist + paths.assets + "fonts"))
-
 });
+
 gulp.task('bootstrapFT',function () {
 	gulp.src(sources.bootstrapFT).pipe(gulp.dest(config.dist + paths.assets + "fonts/bootstrap"))
-
 });
 
 
@@ -103,7 +95,6 @@ gulp.task("js", function () {
 
 gulp.task('components',function () {
 	gulp.src(sources.components).pipe(gulp.dest(config.dist + paths.assets + "js/components"))
-
 });
 
 
@@ -131,10 +122,6 @@ gulp.task("serve", function () {
 	gulp.watch(sources.html, ["html-watch"]);
 	gulp.watch(sources.sass, ["sass-watch"]);
 	gulp.watch(sources.js, ["js-watch"]);
-
 });
-
-
-//'html-watch', 'js-watch', 'sass-watch'
 
 gulp.task('run', [ 'fonts','html-watch', 'js-watch', 'sass-watch','bootstrapFT','vendor', 'img', 'autor', 'noticias', 'components','bootstrapJS','serve']);
