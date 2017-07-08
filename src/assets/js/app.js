@@ -3,8 +3,10 @@ const root = $('.root');
 const render = (root) => {
 	root.empty();
 	const wrapper = $('<div class="wrapper"></div>');
-    wrapper.append(Header());
-    wrapper.append(Noticias());
+    /*wrapper.append(Header());
+    wrapper.append(Noticias());*/
+ wrapper.append(Mundo());
+ 
   
 	root.append(wrapper);
 }

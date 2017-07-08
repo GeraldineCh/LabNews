@@ -22,7 +22,7 @@ header {
 .img-header {
  align-content: center;
  margin: 1rem;
- height: 3rem;
+ height: 2rem;
 }
 
 .separador-header {
@@ -56,5 +56,61 @@ header {
 /*SECCIÓN NOTICIAS SECUNDARIAS*/
 
 .gray-bg {
+ padding: 2rem;
  background-color: #2B2B2B;
+}
+
+.mywhite{
+ color: white;
+}
+
+#noticia11 {
+ background-image: url(../img/news/news-1.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 15rem;
+}
+
+#noticia22 {
+ background-image: url(../img/news/news-2.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 15rem;
+}
+
+#noticia33 {
+ background-image: url(../img/news/news-3.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 15rem;
+}
+
+
+/*SECCIÓN MUNDO*/
+
+#mundo11 {
+ background-image: url(../img/news/news-4.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 20rem;
+}
+
+#mundo22 {
+ background-image: url(../img/news/news-5.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 8rem;
+}
+
+#mundo33 {
+ background-image: url(../img/news/news-6.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 15rem;
 }
